@@ -4,6 +4,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-neon: var(--neon);
+  --color-neon-soft: var(--neon-soft);
+  --color-magenta: var(--magenta);
+  --color-panel: var(--panel);
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
 /*
  * Design system definition.
  *
@@ -63,25 +72,38 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --background: oklch(0.24 0.09 235);
+  --foreground: oklch(0.97 0.01 240);
+  --card: oklch(0.19 0.05 240);
+  --card-foreground: oklch(0.97 0.01 240);
+  --popover: oklch(0.19 0.05 240);
+  --popover-foreground: oklch(0.97 0.01 240);
+  --primary: oklch(0.72 0.16 232);
+  --primary-foreground: oklch(0.16 0.05 240);
+  --secondary: oklch(0.26 0.06 242);
+  --secondary-foreground: oklch(0.97 0.01 240);
+  --muted: oklch(0.26 0.06 242);
+  --muted-foreground: oklch(0.75 0.03 240);
+  --accent: oklch(0.72 0.16 232);
+  --accent-foreground: oklch(0.16 0.05 240);
+  --neon: oklch(0.78 0.15 220);
+  --neon-soft: oklch(0.62 0.13 228);
+  --magenta: oklch(0.62 0.24 5);
+  --panel: oklch(0.17 0.045 243);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.38 0.07 235 / 55%);
+  --input: oklch(0.38 0.07 235 / 55%);
+  --ring: oklch(0.72 0.16 232);
+  --gradient-hero: radial-gradient(
+      120% 90% at 12% 25%,
+      color-mix(in oklab, var(--neon) 26%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(90% 80% at 85% 80%, color-mix(in oklab, var(--neon) 18%, transparent), transparent 62%),
+    linear-gradient(150deg, oklch(0.32 0.11 226), oklch(0.2 0.07 244));
+  --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--neon) 60%, transparent);
+  --shadow-panel: 0 40px 90px -30px oklch(0.1 0.05 240 / 80%);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +162,35 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility hero-surface {
+  background-image: var(--gradient-hero);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 24px color-mix(in oklab, var(--neon) 55%, transparent);
+}
+
+@utility btn-neon {
+  border: 1px solid color-mix(in oklab, var(--neon) 70%, transparent);
+  color: var(--color-neon);
+  background: color-mix(in oklab, var(--neon) 12%, transparent);
+  box-shadow: 0 0 22px -6px color-mix(in oklab, var(--neon) 70%, transparent);
+  transition: all 0.25s ease;
+  &:hover {
+    background: color-mix(in oklab, var(--neon) 24%, transparent);
+  }
+}
+
+@utility btn-magenta {
+  background: var(--color-magenta);
+  color: oklch(0.99 0 0);
+  box-shadow: 0 0 26px -8px var(--color-magenta);
+  transition: all 0.25s ease;
+  &:hover {
+    filter: brightness(1.1);
   }
 }
