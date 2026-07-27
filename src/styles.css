@@ -162,5 +162,35 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility hero-surface {
+  background-image: var(--gradient-hero);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 24px color-mix(in oklab, var(--neon) 55%, transparent);
+}
+
+@utility btn-neon {
+  border: 1px solid color-mix(in oklab, var(--neon) 70%, transparent);
+  color: var(--color-neon);
+  background: color-mix(in oklab, var(--neon) 12%, transparent);
+  box-shadow: 0 0 22px -6px color-mix(in oklab, var(--neon) 70%, transparent);
+  transition: all 0.25s ease;
+  &:hover {
+    background: color-mix(in oklab, var(--neon) 24%, transparent);
+  }
+}
+
+@utility btn-magenta {
+  background: var(--color-magenta);
+  color: oklch(0.99 0 0);
+  box-shadow: 0 0 26px -8px var(--color-magenta);
+  transition: all 0.25s ease;
+  &:hover {
+    filter: brightness(1.1);
   }
 }
