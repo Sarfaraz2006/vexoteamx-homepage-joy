@@ -22,7 +22,7 @@ import {
   ArrowRight,
   ExternalLink,
 } from "lucide-react";
-import heroPerson from "@/assets/hero-person.png";
+// Removed generic heroPerson import
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -58,66 +58,66 @@ const stats = [
 ];
 
 const skills = [
-  { name: "React / Next.js", percent: 95 },
-  { name: "TypeScript", percent: 92 },
-  { name: "Tailwind CSS", percent: 90 },
-  { name: "UI/UX Design", percent: 85 },
-  { name: "Node.js", percent: 78 },
+  { name: "Automation (Make.com/Zapier)", percent: 95 },
+  { name: "AI Agents & LangChain", percent: 92 },
+  { name: "Telegram/WhatsApp Bots", percent: 90 },
+  { name: "React Web Development", percent: 85 },
+  { name: "Cold Email Outreach", percent: 80 },
 ];
 
 const services = [
   {
     icon: Layout,
-    title: "Web Development",
+    title: "Premium Websites",
     desc: "Fast, responsive websites built with modern stacks and clean architecture.",
   },
   {
-    icon: Smartphone,
-    title: "App Interfaces",
-    desc: "Pixel-perfect mobile and web app UIs that feel native and delightful.",
+    icon: Rocket,
+    title: "Workflow Automation",
+    desc: "Seamless automation using Make.com to save hundreds of hours.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    desc: "User-centered design systems, wireframes, and polished visual experiences.",
+    icon: Zap,
+    title: "AI Sales Agents",
+    desc: "Custom LLM agents that interact with clients and close deals automatically.",
+  },
+  {
+    icon: Send,
+    title: "Telegram & WhatsApp Bots",
+    desc: "Intelligent chatbots for customer support and lead generation.",
+  },
+  {
+    icon: Mail,
+    title: "Cold Email Outreach",
+    desc: "Targeted B2B email campaigns that convert cold leads into meetings.",
   },
   {
     icon: Globe,
-    title: "SEO & Performance",
-    desc: "Optimized Core Web Vitals, accessibility, and search-ready page structures.",
-  },
-  {
-    icon: Figma,
-    title: "Design to Code",
-    desc: "Turn Figma mockups into production-ready components with precision.",
-  },
-  {
-    icon: Rocket,
-    title: "Product Launch",
-    desc: "End-to-end support from prototype to deployment and beyond.",
+    title: "WebGL & Interactive UX",
+    desc: "Immersive 3D web experiences that captivate users and elevate your brand.",
   },
 ];
 
 const portfolio = [
   {
-    title: "E-Commerce Dashboard",
-    tags: ["React", "Tailwind"],
-    color: "from-neon/20 to-blue-500/20",
+    title: "Cold Email Automation",
+    tags: ["Make.com", "Apollo", "Outreach"],
+    images: ["/cold_email.jpg", "/email_sequence.jpg", "/email_analytics.jpg"],
   },
   {
-    title: "Fintech Mobile App",
-    tags: ["TypeScript", "UI/UX"],
-    color: "from-magenta/20 to-purple-500/20",
+    title: "Premium WebGL Websites",
+    tags: ["React", "Three.js", "GSAP"],
+    images: ["/webgl_websites.jpg", "/webgl_shoe.jpg", "/webgl_portfolio.jpg"],
   },
   {
-    title: "SaaS Landing Page",
-    tags: ["Next.js", "SEO"],
-    color: "from-emerald-400/20 to-neon/20",
+    title: "Custom AI Sales Agents",
+    tags: ["LLM", "Python", "LangChain"],
+    images: ["/ai_sales.jpg", "/ai_crm.jpg", "/ai_voice.jpg"],
   },
   {
-    title: "Creative Agency Site",
-    tags: ["Design", "Animation"],
-    color: "from-amber-400/20 to-rose-500/20",
+    title: "Telegram/WhatsApp Chatbots",
+    tags: ["Bot API", "NLP", "Lead Gen"],
+    images: ["/chatbots.jpg", "/bot_builder.jpg", "/whatsapp_bot.jpg"],
   },
 ];
 
@@ -171,26 +171,23 @@ function Index() {
             >
               <Moon className="size-4" />
             </button>
-            <a
-              href="#"
-              className="btn-magenta inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold"
-            >
-              Download CV <Download className="size-4" />
-            </a>
           </div>
         </header>
 
         <section id="home" className="grid items-center gap-10 px-6 pb-14 pt-8 sm:px-10 md:grid-cols-2">
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute inset-4 rounded-full bg-neon/25 blur-3xl" />
-            <div className="relative aspect-[9/11] overflow-hidden rounded-[48%_48%_45%_45%/40%_40%_60%_60%] ring-2 ring-neon/60 shadow-[var(--shadow-glow)]">
+            <div className="relative flex justify-center items-center overflow-hidden rounded-2xl border-2 border-neon/40 shadow-[0_0_30px_rgba(var(--neon-rgb),0.3)]">
               <img
-                src={heroPerson}
-                alt="VexoTeamX lead frontend developer"
+                src="/founder.jpg"
+                alt="Sarfaraz Ahmad - Founder & CEO"
                 width={900}
                 height={1100}
-                className="size-full object-cover object-top"
+                className="w-full h-auto max-h-[460px] object-cover transition-transform duration-700 hover:scale-105"
               />
+            </div>
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-max rounded-full border border-neon/30 bg-background/90 px-5 py-2 backdrop-blur-md shadow-[0_0_15px_rgba(var(--neon-rgb),0.3)] z-10">
+              <p className="text-sm font-bold text-white">Sarfaraz Ahmad <span className="text-neon font-normal mx-1">|</span> <span className="text-muted-foreground text-xs font-normal">Founder & CEO</span></p>
             </div>
           </div>
 
@@ -251,32 +248,30 @@ function Index() {
         {/* About */}
         <section id="about" className="border-t border-border px-6 py-16 sm:px-10">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-neon">About Us</span>
-            <h2 className="section-title mt-3">We Design & Build Digital Products</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              VexoTeamX is a frontend-focused studio that helps startups and established brands
-              ship beautiful, high-performance interfaces. We combine design thinking with modern
-              engineering — from the first wireframe to the final deploy.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {[
-              { icon: Zap, title: "Fast Delivery", desc: "Sprints that keep momentum without cutting corners." },
-              { icon: Shield, title: "Reliable Code", desc: "Type-safe, tested, and ready to scale." },
-              { icon: Code, title: "Clean Architecture", desc: "Maintainable components and design systems." },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="card-glow rounded-2xl p-6 text-center"
-              >
-                <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-neon/10 text-neon">
-                  <item.icon className="size-6" />
-                </div>
-                <h3 className="mt-4 font-display text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+            <div>
+              <span className="text-sm font-semibold uppercase tracking-widest text-neon">About Us</span>
+              <h2 className="section-title mt-3">We Design & Build Digital Products</h2>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                VexoTeamX is a frontend-focused studio that helps startups and established brands
+                ship beautiful, high-performance interfaces. We combine design thinking with modern
+                engineering — from the first wireframe to the final deploy.
+              </p>
+              
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                {[
+                  { icon: Zap, title: "Fast Delivery", desc: "Sprints that keep momentum." },
+                  { icon: Shield, title: "Reliable Code", desc: "Tested and ready to scale." },
+                ].map((item) => (
+                  <div key={item.title} className="card-glow rounded-2xl p-6">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-neon/10 text-neon">
+                      <item.icon className="size-5" />
+                    </div>
+                    <h3 className="mt-4 font-display text-base font-semibold">{item.title}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
@@ -347,10 +342,19 @@ function Index() {
                 key={project.title}
                 className="card-glow group relative overflow-hidden rounded-2xl"
               >
-                <div
-                  className={`aspect-[16/10] bg-gradient-to-br ${project.color} flex items-center justify-center`}
-                >
-                  <Layout className="size-16 text-white/40 transition-transform duration-300 group-hover:scale-110" />
+                <div className="aspect-[16/10] w-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                  {project.images.map((img, idx) => (
+                    <div key={idx} className="min-w-full h-full flex-shrink-0 snap-center relative">
+                      <img src={img} alt={`${project.title} - Image ${idx + 1}`} className="size-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      {project.images.length > 1 && (
+                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                          {project.images.map((_, dotIdx) => (
+                            <div key={dotIdx} className={`w-1.5 h-1.5 rounded-full ${dotIdx === idx ? 'bg-white' : 'bg-white/30'}`} />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between">
