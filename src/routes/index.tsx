@@ -28,17 +28,17 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "VexoTeamX — Frontend Development Studio" },
+      { title: "VexoTeamX — Founder-Led Studio" },
       {
         name: "description",
         content:
-          "VexoTeamX builds fast, modern frontend experiences — 30+ projects delivered, 100+ satisfied clients.",
+          "VexoTeamX is a founder-led studio building fast, modern websites and AI-powered automation for small businesses.",
       },
-      { property: "og:title", content: "VexoTeamX — Frontend Development Studio" },
+      { property: "og:title", content: "VexoTeamX — Founder-Led Studio" },
       {
         property: "og:description",
         content:
-          "VexoTeamX builds fast, modern frontend experiences — 30+ projects delivered, 100+ satisfied clients.",
+          "VexoTeamX is a founder-led studio building fast, modern websites and AI-powered automation for small businesses.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -51,10 +51,10 @@ export const Route = createFileRoute("/")({
 const navLinks = ["Home", "About", "Skills", "Services", "Portfolio", "Contact"];
 
 const stats = [
-  { value: "10+", label: ["Years of", "experience"] },
-  { value: "30+", label: ["Projects", "completed"] },
+  { value: "Founder-Led", label: ["Studio", ""] },
+  { value: "5+", label: ["Live", "Projects"] },
   { value: "5+", label: ["Technologies", "mastered"] },
-  { value: "100+", label: ["Satisfied", "Client"] },
+  { value: "56+", label: ["Leads in", "Pipeline"] },
 ];
 
 const skills = [
@@ -121,24 +121,6 @@ const portfolio = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Aman Sharma",
-    role: "Founder, ScaleUp",
-    text: "VexoTeamX delivered our product UI in record time. The attention to detail was incredible.",
-  },
-  {
-    name: "Priya Patel",
-    role: "Product Manager",
-    text: "Professional, responsive, and technically sharp. They turned our Figma designs into flawless code.",
-  },
-  {
-    name: "Rahul Verma",
-    role: "CTO, TechLabs",
-    text: "Our site performance scores jumped from 42 to 96 after their rebuild. Highly recommended.",
-  },
-];
-
 function Index() {
   return (
     <main className="hero-surface min-h-screen w-full px-4 py-6 sm:px-8 sm:py-10">
@@ -179,7 +161,7 @@ function Index() {
             <div className="absolute inset-4 rounded-full bg-neon/25 blur-3xl" />
             <div className="relative flex justify-center items-center overflow-hidden rounded-2xl border-2 border-neon/40 shadow-[0_0_30px_rgba(var(--neon-rgb),0.3)]">
               <img
-                src="/founder.jpg"
+                src="/sarfaraz_new.jpg"
                 alt="Sarfaraz Ahmad - Founder & CEO"
                 width={900}
                 height={1100}
@@ -235,10 +217,10 @@ function Index() {
               key={s.value}
               className={`flex items-center justify-center gap-3 ${i > 0 ? "md:border-l md:border-border" : ""}`}
             >
-              <span className="font-display text-3xl font-extrabold sm:text-4xl">{s.value}</span>
+              <span className="font-display text-2xl font-extrabold sm:text-3xl text-glow">{s.value}</span>
               <span className="text-xs leading-tight text-muted-foreground">
                 {s.label[0]}
-                <br />
+                {s.label[1] ? <br /> : null}
                 {s.label[1]}
               </span>
             </div>
@@ -252,9 +234,7 @@ function Index() {
               <span className="text-sm font-semibold uppercase tracking-widest text-neon">About Us</span>
               <h2 className="section-title mt-3">We Design & Build Digital Products</h2>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                VexoTeamX is a frontend-focused studio that helps startups and established brands
-                ship beautiful, high-performance interfaces. We combine design thinking with modern
-                engineering — from the first wireframe to the final deploy.
+                VexoTeamX is a founder-led studio building fast, modern websites and AI-powered automation for small businesses. We combine design thinking with modern engineering — from the first concept to the final deploy.
               </p>
               
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -342,6 +322,11 @@ function Index() {
                 key={project.title}
                 className="card-glow group relative overflow-hidden rounded-2xl"
               >
+                {/* Top-Right Demo Build Badge */}
+                <div className="absolute top-3 right-3 z-20 rounded-full border border-neon/40 bg-background/85 px-3 py-1 text-[11px] font-semibold text-neon backdrop-blur-md shadow-sm">
+                  Demo Build
+                </div>
+
                 <div className="aspect-[16/10] w-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
                   {project.images.map((img, idx) => (
                     <div key={idx} className="min-w-full h-full flex-shrink-0 snap-center relative">
@@ -383,33 +368,19 @@ function Index() {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* What We're Building */}
         <section className="border-t border-border px-6 py-16 sm:px-10">
           <div className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-neon">Testimonials</span>
-            <h2 className="section-title mt-3">What Clients Say</h2>
+            <span className="text-sm font-semibold uppercase tracking-widest text-neon">What We're Building</span>
+            <h2 className="section-title mt-3">Case Studies Coming Soon</h2>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div key={t.name} className="card-glow rounded-2xl p-6">
-                <div className="flex gap-1 text-neon">
-                  {[...Array(5)].map((_, i) => (
-                    <Zap key={i} className="size-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">“{t.text}”</p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-full bg-neon/10 font-display text-sm font-bold text-neon">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="mt-8 mx-auto max-w-2xl">
+            <div className="card-glow rounded-2xl p-8 text-center border border-neon/20 shadow-[0_0_20px_rgba(var(--neon-rgb),0.1)]">
+              <p className="text-base sm:text-lg font-medium text-foreground leading-relaxed">
+                “We're currently onboarding our first clients — case studies coming soon.”
+              </p>
+            </div>
           </div>
         </section>
 
