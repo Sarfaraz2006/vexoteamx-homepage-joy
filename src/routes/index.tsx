@@ -399,7 +399,11 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold">Email</p>
-                  <p className="text-sm text-muted-foreground">hello@vexoteamx.com</p>
+                  <p className="text-sm text-muted-foreground">
+                    <a href="mailto:vexo.teamx@gmail.com" className="hover:text-neon transition-colors">
+                      vexo.teamx@gmail.com
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -408,7 +412,11 @@ function Index() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold">Phone</p>
-                  <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-sm text-muted-foreground">
+                    <a href="tel:+919792373267" className="hover:text-neon transition-colors">
+                      +91 97923 73267
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
